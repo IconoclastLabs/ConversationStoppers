@@ -15,8 +15,13 @@ class RootController < UIViewController
 
   	# Use custom button for navigation button
   	@gear.addTarget(self, action:'push_settings', forControlEvents:UIControlEventTouchUpInside)
+    @long_button.addTarget(self, action:'next_stopper', forControlEvents:UIControlEventTouchUpInside)
   	@nav_bar_button = UIBarButtonItem.alloc.initWithCustomView(@gear)
     self.navigationItem.rightBarButtonItem = @nav_bar_button
+  end
+
+  def next_stopper
+    UIAlertView.alert "This is happening, OK?" { self.happened! }
   end
 
   def push_settings

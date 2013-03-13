@@ -35,6 +35,7 @@ class RootController < UIViewController
     # On touch pull the next line
     @long_button.on(:touch) do 
       @label.text = @stoppers.next_line
+      @label.reduce_to_frame(40)
     end
   end
 end

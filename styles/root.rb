@@ -5,7 +5,7 @@ Teacup::Stylesheet.new :root do
 
   style :label, extends: :custom_label,
     constraints: [
-      constrain(:width).equals(:superview, :width).minus(10),
+      constrain(:width).equals(:superview, :width).minus(15),
       constrain(:center_x).equals(:superview, :center_x),
       constrain(:height).equals(:superview, :height).minus(75),
       constrain(:top).equals(:superview, :top)

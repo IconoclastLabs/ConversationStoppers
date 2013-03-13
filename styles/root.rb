@@ -6,7 +6,8 @@ Teacup::Stylesheet.new :root do
   style :label, extends: :custom_label,
     constraints: [
       :full_width,
-      :full_height
+      constrain(:height).equals(:superview, :height).minus(75),
+      constrain(:top).equals(:superview, :top)
     ],
     backgroundColor: :clear
 

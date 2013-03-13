@@ -13,24 +13,28 @@ class RootController < UIViewController
 
     # Title for this view
     self.title = "Conversation Stoppers"
+    # Stoppers engine
+    @stoppers = Stoppers.new
 
-    # Use custom button for navigation button and events for stopper button
-    @gear.addTarget(self, action:'push_settings', forControlEvents:UIControlEventTouchUpInside)
-    @long_button.addTarget(self, action:'next_stopper', forControlEvents:UIControlEventTouchUpInside)
+    # all button code
+    self.initialize_buttons
+
+    # make navigation use our special button
     @nav_bar_button = UIBarButtonItem.alloc.initWithCustomView(@gear)
     self.navigationItem.rightBarButtonItem = @nav_bar_button
 
-    # Stoppers engine
-    @stoppers = Stoppers.new
   end
 
-  def next_stopper
-    #UIAlertView.alert "Load Next Stopper"
-    @label.text = @stoppers.next_line
-  end
+  def initialize_buttons
+    # Use custom button for navigation button and events for stopper button
+    @gear.on(:touch) do
+      @settings = SettingsController.alloc.init 
+      self.navigationController.pushViewController(@settings, animated: true)
+    end
 
-  def push_settings
-    @settings = SettingsController.alloc.init 
-    self.navigationController.pushViewController(@settings, animated: true)
+    # On touch pull the next line
+    @long_button.on(:touch) do 
+      @label.text = @stoppers.next_line
+    end
   end
 end

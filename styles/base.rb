@@ -9,7 +9,7 @@ Teacup::Stylesheet.new :base do
     nav_tint: dark_color
 
   style :custom_label,
-    text: 'Stoppers!',
+    text: 'Stop That Convo!',
     backgroundColor: :clear,
     numberOfLines: 0,
     font: :bold.uifont(40),

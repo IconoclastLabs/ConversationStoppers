@@ -2,20 +2,22 @@ Teacup::Stylesheet.new :settings do
   import :base
 
   v_padding = 10
-  gradient_top_color = 0xc3a477.uicolor 
-  gradient_bottom_color = 0x9f8061.uicolor
 
-  # Commented out because it doesn't seem to play nicely with landscape
-  #style :settings,
-  #  gradient: { 
-  #    colors: [gradient_top_color.CGColor, gradient_bottom_color.CGColor] 
-  #  }
-
-  style :label, extends: :custom_label,
+  style :try, extends: :custom_label,
     constraints: [
       :full_width,
-      constrain_top(150)
+      constrain(:height).equals(:superview, :height).divided_by(5),
+      constrain_top(20)
     ],
-    backgroundColor: :clear
+    text: "Want to actually start a conversation?  Try This!",
+    backgroundColor: :clear,
+    height: 200,
+    font: :bold.uifont(20)
+
+  style :chatoms, extends: :chatoms_button,
+    constraints: [
+      constrain(:center_x).equals(:superview, :center_x),
+      constrain_below(:try)
+    ]
 
 end

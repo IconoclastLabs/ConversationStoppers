@@ -15,10 +15,3 @@ Teacup.handler UIRoundedRectButton, :button_background do |view, image, text_col
   view.setBackgroundImage(image.uiimage, forState:UIControlStateNormal)
   view.setTitleColor(text_color, forState:UIControlStateNormal)
 end
-
-Teacup.handler UISegmentedControl, :backgroundOn do |view, image, segment_image|
-	segment_image ||= 'segment'.uiimage
-	view.setDividerImage(segment_image.uiimage, forLeftSegmentState: UIControlStateSelected, rightSegmentState: UIControlStateNormal, barMetrics: UIBarMetricsDefault)
-	view.setBackgroundImage(image.uiimage, forState:UIControlStateNormal, barMetrics:UIBarMetricsDefault)
-end
-

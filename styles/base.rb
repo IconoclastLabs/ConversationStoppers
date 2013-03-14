@@ -1,6 +1,6 @@
 Teacup::Stylesheet.new :base do
   back_color = 0xa53d3d.uicolor 
-  dark_color = 0x4a1c1c.uicolor
+  dark_color = 0x000000.uicolor
   mid_color = 0x823131.uicolor
 
   style UIView,
@@ -12,7 +12,7 @@ Teacup::Stylesheet.new :base do
     text: 'Stop That Convo!',
     backgroundColor: :clear,
     numberOfLines: 0,
-    font: :bold.uifont(40),
+    font: :bold.uifont(36),
     textColor: :white,
     shadowColor: :black,
     textAlignment: UITextAlignmentCenter,
@@ -30,9 +30,12 @@ Teacup::Stylesheet.new :base do
     button_background: 'large_button'
  
   style :settings_button,
-    button_background: 'gear',
+    button_background: 'skull',
     height: 18,
     width: 18,
     backgroundColor: :clear
+
+  style :chatoms_button,
+    image: 'chatoms'
 
 end

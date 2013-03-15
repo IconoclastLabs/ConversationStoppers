@@ -1,4 +1,4 @@
-describe "Application 'SplashMotion'" do
+describe "Splash Screen" do
   before do
     @app = UIApplication.sharedApplication
     @root_view = @app.windows[0].rootViewController.view

@@ -37,7 +37,8 @@ class Stoppers
 		@lines.push "You look like you're going to be sexy when you're 80"
 		@lines.push "You might want to get tested... your daughter too... and the dog."
 		@lines.push "I don't blame my molester, I was a cute 6 yr old."
-
+		@lines.push "Mommy said the same thing during our bath last night!"
+		
 		@lines.shuffle!
 	end
 

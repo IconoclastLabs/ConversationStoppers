@@ -3,9 +3,9 @@ Teacup::Stylesheet.new :settings do
 
   v_padding = 10
   @credits = []
-  @credits.push "This is a novelty product of IconoclastLabs.com"
+  @credits.push "This is an open source novelty product of IconoclastLabs.com"
   @credits.push "CREDITS:"
-  @credits.push "Massimiliano Mauro, Gant"
+  @credits.push "Massimiliano Mauro, Gant, Matt, Jen Milan, "
 
   style :try, extends: :custom_label,
     constraints: [

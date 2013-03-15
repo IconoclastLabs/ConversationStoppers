@@ -4,6 +4,7 @@ class SettingsController < UIViewController
   layout :settings do
     @label = subview(UILabel, :try)
     @chatoms = subview(UIButton.rounded_rect, :chatoms)
+    @about = subview(UILabel, :about)
   end  
 
   def viewDidLoad

@@ -2,6 +2,10 @@ Teacup::Stylesheet.new :settings do
   import :base
 
   v_padding = 10
+  @credits = []
+  @credits.push "This is a novelty product of IconoclastLabs.com"
+  @credits.push "CREDITS:"
+  @credits.push "Massimiliano Mauro, Gant"
 
   style :try, extends: :custom_label,
     constraints: [
@@ -11,7 +15,6 @@ Teacup::Stylesheet.new :settings do
     ],
     text: "Want to actually start a conversation?  Try This!",
     backgroundColor: :clear,
-    height: 200,
     font: :bold.uifont(20)
 
   style :chatoms, extends: :chatoms_button,
@@ -20,4 +23,11 @@ Teacup::Stylesheet.new :settings do
       constrain_below(:try)
     ]
 
+  style :about, extends: :custom_label,
+    constraints: [
+      :full_width,
+      constrain_below(:chatoms).plus(v_padding)
+    ],
+    font: :bold.uifont(12),
+    text: @credits.join("\n")
 end

@@ -20,8 +20,10 @@ Teacup::Stylesheet.new :root do
 
   style :ads,
     constraints: [
+      :full_width,
       constrain_below(:label),
-      constrain_left(0)
+      constrain(:center_x).equals(:superview, :center_x)
     ],
+    currentContentSizeIdentifier: ADBannerContentSizeIdentifierPortrait,
     backgroundColor: :clear
 end

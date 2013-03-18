@@ -16,8 +16,6 @@ class RootController < UIViewController
 
     # Title for this view
     self.title = "Conversation Stoppers"
-    view.image = 'background'.uiimage
-    view.userInteractionEnabled = true
     # Stoppers engine
     @stoppers = Stoppers.new
 

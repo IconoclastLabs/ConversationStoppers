@@ -5,7 +5,7 @@ Teacup::Stylesheet.new :settings do
   @credits = []
   @credits.push "This is an open source novelty product of IconoclastLabs.com"
   @credits.push "CREDITS:"
-  @credits.push "Massimiliano Mauro, Gant, Matt, Jen Milan, Robbie Bogan"
+  @credits.push "Massimiliano Mauro, Gant, Matt, Jen Milan, Robbie Bogan, Dave Cariello, Bo Cranford"
 
   style :try, extends: :custom_label,
     constraints: [

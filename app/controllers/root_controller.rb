@@ -28,9 +28,7 @@ class RootController < UIViewController
     self.navigationItem.rightBarButtonItem = @nav_bar_button
 
     # Handle ads
-    #@ad.requiredContentSizeIdentifiers = NSSet.setWithObject(ADBannerContentSizeIdentifierPortrait)
     @ad.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
-    @ad.delegate = self
 
   end
 

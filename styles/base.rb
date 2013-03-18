@@ -9,7 +9,7 @@ Teacup::Stylesheet.new :base do
     nav_tint: dark_color
 
   style UIImageView,
-    image: 'background'.uiimage,
+    image: 'background',
     userInteractionEnabled: true
 
   style :custom_label,

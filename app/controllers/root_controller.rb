@@ -28,7 +28,7 @@ class RootController < UIViewController
     self.navigationItem.rightBarButtonItem = @nav_bar_button
 
     # Handle ads
-    @ad.delegate = self
+    @ad.delegate = AdDelegate
 
   end
 
@@ -46,7 +46,4 @@ class RootController < UIViewController
     end
   end
 
-  def bannerView(banner, didFailToReceiveAdWithError:error)
-    p "Needed Banner thingy"
-  end
 end

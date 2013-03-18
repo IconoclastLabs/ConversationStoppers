@@ -26,7 +26,8 @@ Teacup::Stylesheet.new :settings do
   style :about, extends: :custom_label,
     constraints: [
       :full_width,
-      constrain_below(:chatoms).plus(v_padding)
+      constrain_below(:chatoms).plus(v_padding),
+      constrain(:height).equals(:superview, :height).divided_by(3)
     ],
     font: :bold.uifont(12),
     text: @credits.join("\n")

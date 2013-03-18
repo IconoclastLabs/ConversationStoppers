@@ -26,6 +26,13 @@ class RootController < UIViewController
     @nav_bar_button = UIBarButtonItem.alloc.initWithCustomView(@gear)
     self.navigationItem.rightBarButtonItem = @nav_bar_button
 
+    # Handle ads
+    @ad = ADBannerView.alloc.initWithFrame(CGRectZero)
+    @ad.requiredContentSizeIdentifiers = NSSet.setWithObject(ADBannerContentSizeIdentifierPortrait)
+    @ad.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
+    self.view << @ad
+    @ad.delegate = self
+
   end
 
   def initialize_buttons
@@ -41,4 +48,5 @@ class RootController < UIViewController
       @label.fit(40)
     end
   end
+
 end

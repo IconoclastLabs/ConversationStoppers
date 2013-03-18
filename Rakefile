@@ -11,4 +11,6 @@ Motion::Project::App.setup do |app|
 
   #include styles
   app.files += Dir.glob(File.join(app.project_dir, 'styles/**/*.rb'))
+  #frameworks
+  app.frameworks << "iAd"
 end

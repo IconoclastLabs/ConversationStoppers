@@ -7,7 +7,7 @@ Teacup::Stylesheet.new :root do
     constraints: [
       constrain(:width).equals(:superview, :width).minus(15),
       constrain(:center_x).equals(:superview, :center_x),
-      constrain(:height).equals(:superview, :height).minus(75),
+      constrain(:height).equals(:superview, :height).minus(115),
       constrain(:top).equals(:superview, :top)
     ],
     backgroundColor: :clear
@@ -18,4 +18,10 @@ Teacup::Stylesheet.new :root do
       constrain(:center_x).equals(:superview, :center_x)
     ]
 
+  style :ads,
+    constraints: [
+      constrain_below(:label),
+      constrain_left(0)
+    ],
+    backgroundColor: :clear
 end

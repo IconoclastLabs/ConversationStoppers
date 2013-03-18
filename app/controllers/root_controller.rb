@@ -5,6 +5,7 @@ class RootController < UIViewController
     @label = subview(UILabel, :label)
     @long_button = subview(UIButton.rounded_rect, :long_button)
     @gear = subview(UIButton.rounded_rect, :settings_button)
+    @ad = subview(ADBannerView, :ads)
   end  
 
   def loadView
@@ -27,10 +28,8 @@ class RootController < UIViewController
     self.navigationItem.rightBarButtonItem = @nav_bar_button
 
     # Handle ads
-    @ad = ADBannerView.alloc.initWithFrame(CGRectZero)
-    @ad.requiredContentSizeIdentifiers = NSSet.setWithObject(ADBannerContentSizeIdentifierPortrait)
+    #@ad.requiredContentSizeIdentifiers = NSSet.setWithObject(ADBannerContentSizeIdentifierPortrait)
     @ad.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
-    self.view << @ad
     @ad.delegate = self
 
   end

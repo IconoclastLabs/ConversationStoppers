@@ -5,6 +5,7 @@ Teacup::Stylesheet.new :base do
 
   style UIView,
     backgroundColor: back_color,
+    #image: 'background'.uiimage,
     nav_btn_tint: mid_color,
     nav_tint: dark_color
 

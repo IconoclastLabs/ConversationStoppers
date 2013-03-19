@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bubble-wrap (1.1.5)
     rake (10.0.3)
     sugarcube (0.19.0)
     sweettea (0.5.6)
@@ -15,7 +14,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bubble-wrap
   sugarcube
   sweettea
   teacup

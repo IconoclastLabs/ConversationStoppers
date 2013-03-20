@@ -39,6 +39,7 @@ class Stoppers
 		@lines.push "I don't blame my molester, I was a cute 6 yr old."
 		@lines.push "Mommy said the same thing during our bath last night!"
 		@lines.push "So, my dog had her period all over the couch last night."
+		@lines.push "I just went to the bathroom and it looks like my dick ate cheezy poofs."
 		@lines.shuffle!
 	end
 

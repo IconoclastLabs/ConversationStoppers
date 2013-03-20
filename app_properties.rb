@@ -20,11 +20,16 @@ class AppProperties
   end
 
   def developer_certificate
+    "iPhone Developer: Matt Garrison (EUS6PB7N8V)"
+  end
+
+  def distribution_certificate
     "iPhone Distribution: Iconoclast Labs LLC"
   end
 
   def provisioning
     './provisioning' #symlink is custom to each user's machine
+
   end
 
   def deployment_target

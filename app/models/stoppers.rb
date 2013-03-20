@@ -40,6 +40,20 @@ class Stoppers
 		@lines.push "Mommy said the same thing during our bath last night!"
 		@lines.push "So, my dog had her period all over the couch last night."
 		@lines.push "I just went to the bathroom and it looks like my dick ate cheezy poofs."
+		@lines.push "I made my work drug free, by taking all the drugs in people's desks."
+		@lines.push "My last fart sounded like an old man's death rattle."
+		@lines.push "I'm celebrating the 1 year anniversary of my last shower."
+		@lines.push "I keep one long toenail for doing coke."
+		@lines.push "Basically there's nothing that comes out of me that doesn't resemble Cream of Mushroom soup."
+		@lines.push "My urine is like the amber from Jurassic Park, but with more bugs."
+		@lines.push "I have to fart like a stripper on smoke break."
+		@lines.push "I've pretty much given up bathing now that I found dryer sheets."
+		@lines.push "Tequila tastes like step dad kisses."
+		@lines.push "Learning hypnotism really boosted my sex life."
+		@lines.push "I'm basically the King Midas of yeast infections."
+		@lines.push "Whew! The Thai food I had earlier really makes my butt weepy."
+		@lines.push "Let's Harlem Shake naked!"
+		@lines.push "Mind if I floss?"
 		@lines.shuffle!
 	end
 

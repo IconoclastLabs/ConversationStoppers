@@ -5,17 +5,21 @@ require 'bundler'
 require 'sugarcube-568'
 Bundler.require
 
+
+require './app_properties'
+props = AppProperties.new
+
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'Convo Killer'
-  app.version = "1.0"
-  app.short_version = "1.0"
-  app.deployment_target = '6.0'
-  #include styles
-  app.codesign_certificate = "iPhone Distribution: Iconoclast Labs LLC"
-  app.provisioning_profile = "/Users/mattgarrison/Projects/apps/chatomsmotion/resources/Chatoms_Free.mobileprovision"
+  app.name = props.name
+  app.deployment_target = props.deployment_target
+
+  app.version = props.version.scan(/\d+/).flatten.first
+  app.short_version = props.version.scan(/\d+/).first #required to be incremented for AppStore (http://iconoclastlabs.com/cms/blog/posts/updating-a-rubymotion-app-store-submission)
+  app.device_family = props.devices
+  #app.icons = props.icons
+  app.provisioning_profile = props.provisioning
+  app.codesign_certificate = props.developer_certificate
   app.files += Dir.glob(File.join(app.project_dir, 'styles/**/*.rb'))
-  app.device_family = [:iphone, :ipad]
-  #frameworks
-  app.frameworks << "iAd"
+  app.frameworks = props.frameworks
 end

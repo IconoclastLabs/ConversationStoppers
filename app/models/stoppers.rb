@@ -38,7 +38,7 @@ class Stoppers
 		@lines.push "You might want to get tested... your daughter too... and the dog."
 		@lines.push "I don't blame my molester, I was a cute 6 yr old."
 		@lines.push "Mommy said the same thing during our bath last night!"
-		
+		@lines.push "So, my dog had her period all over the couch last night."
 		@lines.shuffle!
 	end
 

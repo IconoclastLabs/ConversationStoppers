@@ -1,6 +1,6 @@
 class AppProperties
   VERSION = '1.0'
-  SKU_NAME = 'convostopperfree' #default
+  SKU_NAME = 'convostoppersfree' #default
   COMPANY_NAME = 'com.iconoclastlabs.'
 
   def name
@@ -46,7 +46,7 @@ class AppProperties
   # end
 
   def devices
-    [:iphone, :ipad]
+    [:iphone]
   end
 
   # def orientations

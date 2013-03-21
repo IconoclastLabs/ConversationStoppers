@@ -13,13 +13,14 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = props.name
   app.deployment_target = props.deployment_target
+  app.identifier = props.identifier
 
   app.version = props.version.scan(/\d+/).flatten.first
   app.short_version = props.version.scan(/\d+/).first #required to be incremented for AppStore (http://iconoclastlabs.com/cms/blog/posts/updating-a-rubymotion-app-store-submission)
   app.device_family = props.devices
   #app.icons = props.icons
-  #app.provisioning_profile = props.provisioning
-  #app.codesign_certificate = props.distribution_certificate
+  app.provisioning_profile = props.provisioning
+  app.codesign_certificate = props.distribution_certificate
   #app.codesign_certificate = props.developer_certificate
   app.files += Dir.glob(File.join(app.project_dir, 'styles/**/*.rb'))
   app.frameworks = props.frameworks

@@ -42,7 +42,7 @@ class RootController < UIViewController
     # On touch pull the next line
     @long_button.on(:touch) do 
       @label.text = @stoppers.next_line
-      @label.fit(40)
+      @label.fit_to_size(40)
     end
   end
 

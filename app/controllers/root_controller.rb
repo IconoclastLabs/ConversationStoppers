@@ -36,7 +36,7 @@ class RootController < UIViewController
     # Use custom button for navigation button and events for stopper button
     @gear.on(:touch) do
       @settings = SettingsController.alloc.init 
-      self.navigationController.pushViewController(@settings, animated: true)
+      self.navigationController << @settings
     end
 
     # On touch pull the next line

@@ -54,6 +54,18 @@ class Stoppers
 		@lines.push "Whew! The Thai food I had earlier really makes my butt weepy."
 		@lines.push "Let's Harlem Shake naked!"
 		@lines.push "Mind if I floss?"
+		@lines.push "Sounds like we've got a douche bag contest going on over here!"
+		@lines.push "I've got the funniest tattoo on my taint."
+		@lines.push "Baby teeth are a joke, they can't even open beers."
+		@lines.push "Woops! That fart came with a mud pie."
+		@lines.push "Am I the only one who thinks creamated sounds dirty?"
+		@lines.push "Ever masturbate while jumping up and down?"
+		@lines.push "Do you taste lik you smell?"
+		@lines.push "Let's all get out of these wet clothes eh?"
+		@lines.push "Nice legs, what time do they open?"
+		@lines.push "I've got a knife and a penis, either way one of them will be inside of you."
+		@lines.push "Love ain't nothin' but sex misspelled."
+		
 		@lines.shuffle!
 	end
 

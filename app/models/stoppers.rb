@@ -67,7 +67,7 @@ class Stoppers
 		@lines.push "Love ain't nothin' but sex misspelled."
 		@lines.push "On a scale of 1-10, I would totally pee in your butt."
 		@lines.push "Not to be too bold, but you have a spectacular queef saddle."
-		
+		@lines.push "I found a testicle on the side and I'm not sure what to do with it."
 		@lines.shuffle!
 	end
 

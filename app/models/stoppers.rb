@@ -65,6 +65,8 @@ class Stoppers
 		@lines.push "Nice legs, what time do they open?"
 		@lines.push "I've got a knife and a penis, either way one of them will be inside of you."
 		@lines.push "Love ain't nothin' but sex misspelled."
+		@lines.push "On a scale of 1-10, I would totally pee in your butt."
+		@lines.push "Not to be too bold, but you have a spectacular queef saddle."
 		
 		@lines.shuffle!
 	end

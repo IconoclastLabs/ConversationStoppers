@@ -4,13 +4,9 @@ Teacup::Stylesheet.new :base do
   mid_color = 0x823131.uicolor
 
   style UIView,
-    backgroundColor: back_color,
+    backgroundColor: 'background'.uicolor,
     nav_btn_tint: mid_color,
     nav_tint: dark_color
-
-  style UIImageView,
-    image: 'background',
-    userInteractionEnabled: true
 
   style :custom_label,
     text: 'Stop That Convo!',

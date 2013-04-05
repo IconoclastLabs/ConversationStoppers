@@ -54,6 +54,14 @@ class Stoppers
 		@lines.push "Whew! The Thai food I had earlier really makes my butt weepy."
 		@lines.push "Let's Harlem Shake naked!"
 		@lines.push "Mind if I floss?"
+		@lines.push "You want hot sex, you kinky with a jalapeno!"
+		@lines.push "Foreplay can sometimes involve an inkjet printer"
+		@lines.push "I'd drag my balls through a field of thistle thorns just to hear you fart through a walkie-talkie"
+		@lines.push "My zipper is like getting a blowjob from a tiny shark"
+		@lines.push "Wow, that was a snatchwaxer with a score to settle!"
+		@lines.push "Sex with a bear seems fun, but it usually turns out to be instantly regretable."
+		@lines.push "My nipples are dead inside."
+		@lines.push "The secret to a fun orgy is butthole suction."
 		@lines.shuffle!
 	end
 

@@ -8,10 +8,6 @@ class RootController < UIViewController
     @ad = subview(ADBannerView, :ads)
   end  
 
-  def loadView
-    self.view = UIImageView.alloc.init
-  end
-
   def viewDidLoad
     super
 

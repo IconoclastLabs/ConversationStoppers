@@ -10,8 +10,7 @@ Teacup.handler UIView, :nav_tint do |color|
 	UINavigationBar.appearance.setTintColor(color)
 end
 
-Teacup.handler UIRoundedRectButton, :button_background do |view, image, text_color|
-  text_color ||= UIColor.whiteColor
+Teacup.handler UIRoundedRectButton, :button_background do |view, image|
   view.setBackgroundImage(image.uiimage, forState:UIControlStateNormal)
-  view.setTitleColor(text_color, forState:UIControlStateNormal)
+  view.setTitleColor(:white.uicolor, forState:UIControlStateNormal)
 end

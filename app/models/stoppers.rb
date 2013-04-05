@@ -60,7 +60,7 @@ class Stoppers
 		@lines.push "Woops! That fart came with a mud pie."
 		@lines.push "Am I the only one who thinks creamated sounds dirty?"
 		@lines.push "Ever masturbate while jumping up and down?"
-		@lines.push "Do you taste lik you smell?"
+		@lines.push "Do you taste like you smell?"
 		@lines.push "Let's all get out of these wet clothes eh?"
 		@lines.push "Nice legs, what time do they open?"
 		@lines.push "I've got a knife and a penis, either way one of them will be inside of you."

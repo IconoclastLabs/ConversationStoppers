@@ -76,6 +76,8 @@ class Stoppers
 		@lines.push "Sex with a bear seems fun, but it usually turns out to be instantly regretable."
 		@lines.push "My nipples are dead inside."
 		@lines.push "The secret to a fun orgy is butthole suction."
+		@lines.push "You know what I hate? The random thoughts that happen right when you cum. I mean c'mon, I'm not a Chihuahua!"
+		@lines.push "I just had the sushi-shits so bad I now have to shower. I swear that thing should come with a mudflap."
 		@lines.shuffle!
 	end
 

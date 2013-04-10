@@ -8,8 +8,7 @@ class RootController < UIViewController
     @ad = subview(ADBannerView, :ads)
   end  
 
-  def viewDidLoad
-    super
+  def layoutDidLoad
 
     # Title for this view
     self.title = "Conversation Stoppers"

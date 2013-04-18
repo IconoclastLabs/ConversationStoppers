@@ -22,6 +22,6 @@ Motion::Project::App.setup do |app|
   app.provisioning_profile = props.provisioning
   app.codesign_certificate = props.distribution_certificate
   #app.codesign_certificate = props.developer_certificate
-  app.files += Dir.glob(File.join(app.project_dir, 'styles/**/*.rb'))
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
   app.frameworks = props.frameworks
 end

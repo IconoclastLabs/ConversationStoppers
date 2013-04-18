@@ -3,18 +3,46 @@ class Stoppers
 
 	def initialize
 		@lines = []
-		self.load_lines
+
+		# get local quip count, if no quips then seed data
+		@lines = App::Persistence['quips'] ||= self.seed_lines
+		# get remote quip count
+		self.remote_update
+		# if count does not match async pull new quips library
+		#self.load_lines
 	end
 
 	def next_line
 		if @lines.blank?
-			self.load_lines
+			#refurnish
+			@lines = App::Persistence['quips']
 		end
 
 		@lines.pop
 	end
 
-	def load_lines
+	def remote_update
+
+		# Let's go check if we need updates
+		BW::HTTP.get("http://frattmans.com:4000/api.json") do |response|
+		  if response.ok?
+		    json = BW::JSON.parse(response.body.to_str)
+		    #Check if counts differ to 
+		    if json['size'] != @lines.size
+		    	# go get em
+		    	self.perform_update
+		    end
+		  else
+		    p "Checkup Failed: #{response.error_message}"
+		  end
+		end
+	end
+
+	def perform_update
+		p "GO GET EM TIGER!"
+	end
+
+	def seed_lines
 		@lines.push "Dandruff tastes way better than it looks"
 		@lines.push "Drinking your own urine is common in some countries"
 		@lines.push "I can't be bothered to shower every day"

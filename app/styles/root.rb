@@ -13,6 +13,7 @@ Teacup::Stylesheet.new :root do
     backgroundColor: :clear
 
   style :long_button, extends: :custom_long_button,
+    text: 'Stop That Convo!',
     constraints: [
       constrain_bottom(-5),
       constrain(:center_x).equals(:superview, :center_x)

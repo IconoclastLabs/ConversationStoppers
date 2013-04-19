@@ -1,29 +1,26 @@
 class Stoppers
-	attr_reader :lines
+	attr_accessor :lines
 
 	def initialize
-		@lines = []
-
 		# get local quip count, if no quips then seed data
 		@lines = App::Persistence['quips'] ||= self.seed_lines
-		# get remote quip count
-		self.remote_update
-		# if count does not match async pull new quips library
-		#self.load_lines
+		@lines.shuffle!
+		# check and grab updates async
+		#self.remote_update
 	end
 
 	def next_line
 		if @lines.blank?
 			#refurnish
 			@lines = App::Persistence['quips']
+			@lines.shuffle!
 		end
 
 		@lines.pop
 	end
 
 	def remote_update
-
-		# Let's go check if we need updates
+		ap "checking if update is needed"
 		BW::HTTP.get("http://frattmans.com:4000/api.json") do |response|
 		  if response.ok?
 		    json = BW::JSON.parse(response.body.to_str)
@@ -33,16 +30,29 @@ class Stoppers
 		    	self.perform_update
 		    end
 		  else
-		    p "Checkup Failed: #{response.error_message}"
+		    ap "Check Failed: #{response.error_message}"
 		  end
 		end
 	end
 
 	def perform_update
-		p "GO GET EM TIGER!"
+		ap "downloading update"
+		BW::HTTP.get("http://frattmans.com:4000/api/v1/quips/index.json") do |response|
+		  if response.ok?
+		    json = BW::JSON.parse(response.body.to_str)
+		    # now that we've got it all let's use em!
+		   	@lines = json['conversation_quips'].map { |quip| quip['sentence'] }
+		    @lines.shuffle!
+		  else
+		    ap "Download Failed: #{response.error_message}"
+		  end
+		end
+
 	end
 
 	def seed_lines
+		ap "seeding lines"
+		@lines = []
 		@lines.push "Dandruff tastes way better than it looks"
 		@lines.push "I can't be bothered to shower every day"
 		@lines.push "if someone just says 'k' or 'okay'. I mean come on, elaborate people!"
@@ -55,7 +65,6 @@ class Stoppers
 		@lines.push "Mind if I floss?"
 		@lines.push "Sounds like we've got a douche bag contest going on over here!"
 		@lines.push "My nipples are dead inside."
-		@lines.shuffle!
 	end
 
 

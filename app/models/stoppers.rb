@@ -3,7 +3,8 @@ class Stoppers
 
 	def initialize
 		# get local quips, if no quips then seed data
-		@lines = App::Persistence['quips'].dup ||= self.seed_lines 
+		App::Persistence['quips'] ||= self.seed_lines 
+		@lines = App::Persistence['quips'].dup
 		@lines.shuffle!
 		# check and grab updates async
 		#self.remote_update

@@ -4,6 +4,7 @@ Teacup::Stylesheet.new :root do
   v_padding = 10
 
   style :label, extends: :custom_label,
+    text: 'Stop That Convo!',
     constraints: [
       constrain(:width).equals(:superview, :width).minus(15),
       constrain(:center_x).equals(:superview, :center_x),
@@ -13,7 +14,6 @@ Teacup::Stylesheet.new :root do
     backgroundColor: :clear
 
   style :long_button, extends: :custom_long_button,
-    text: 'Stop That Convo!',
     constraints: [
       constrain_bottom(-5),
       constrain(:center_x).equals(:superview, :center_x)

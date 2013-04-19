@@ -2,8 +2,8 @@ class Stoppers
 	attr_accessor :lines
 
 	def initialize
-		# get local quip count, if no quips then seed data
-		@lines = App::Persistence['quips'] ||= self.seed_lines
+		# get local quips, if no quips then seed data
+		@lines = App::Persistence['quips'].dup ||= self.seed_lines 
 		@lines.shuffle!
 		# check and grab updates async
 		#self.remote_update
@@ -12,7 +12,7 @@ class Stoppers
 	def next_line
 		if @lines.blank?
 			#refurnish
-			@lines = App::Persistence['quips']
+			@lines = App::Persistence['quips'].dup
 			@lines.shuffle!
 		end
 

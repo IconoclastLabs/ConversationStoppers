@@ -15,6 +15,7 @@ class RootController < UIViewController
     # Stoppers engine
     @stoppers = Stoppers.new
 
+    @long_button.accessibilityLabel = 'Next Button'
     # all button code
     self.initialize_buttons
 

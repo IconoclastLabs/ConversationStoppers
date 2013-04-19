@@ -7,7 +7,7 @@ class Stoppers
 		@lines = App::Persistence['quips'].dup
 		@lines.shuffle!
 		# check and grab updates async
-		#self.remote_update
+		self.remote_update
 	end
 
 	def next_line
@@ -40,9 +40,10 @@ class Stoppers
 		ap "downloading update"
 		BW::HTTP.get("http://frattmans.com:4000/api/v1/quips/index.json") do |response|
 		  if response.ok?
-		    json = BW::JSON.parse(response.body.to_str)
+		    @json = BW::JSON.parse(response.body.to_str)
 		    # now that we've got it all let's use em!
-		   	@lines = json['conversation_quips'].map { |quip| quip['sentence'] }
+		   	App::Persistence['quips'] = @json['conversation_quips'].map { |quip| quip['sentence'] }
+		   	@lines = App::Persistence['quips'].dup
 		    @lines.shuffle!
 		  else
 		    ap "Download Failed: #{response.error_message}"

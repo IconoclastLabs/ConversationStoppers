@@ -31,7 +31,7 @@ class RootController < UIViewController
   def initialize_buttons
     # Use custom button for navigation button and events for stopper button
     @gear.on(:touch) do
-      @settings = SettingsController.alloc.init 
+      @settings = SettingsController.new
       self.navigationController << @settings
     end
 

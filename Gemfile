@@ -6,3 +6,5 @@ gem "teacup"#, :git => 'git@github.com:GantMan/teacup.git'
 gem "sugarcube"
 gem "sweettea"
 gem "bubble-wrap"
+gem "motion-awesome"
+gem "motion-map"

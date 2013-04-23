@@ -5,11 +5,10 @@ class SettingsController < UIViewController
     @label = subview(UILabel, :try)
     @chatoms = subview(UIButton.rounded_rect, :chatoms)
     @about = subview(UILabel, :about)
+    @twitter = subview(MotionAwesome.label(:twitter, text: '@ConvoStoppers'), :twitter_label)
   end  
 
-  def viewDidLoad
-  	super
-
+  def layoutDidLoad
  		# Open Chatoms
     @chatoms.on(:touch) do 
   		url = "itms-apps://itunes.apple.com/app/chatoms/id520369740"

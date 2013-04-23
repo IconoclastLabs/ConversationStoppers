@@ -5,7 +5,7 @@ Teacup::Stylesheet.new :settings do
   @credits = []
   @credits.push "This is an open source novelty product of IconoclastLabs.com"
   @credits.push "CREDITS:"
-  @credits.push "Massimiliano Mauro, Gant, Matt, Jen Milan, Robbie Bogan, Dave Cariello, Bo Cranford"
+  @credits.push "Massimiliano Mauro, Gant, Matt, Robbie Bogan, Dave Cariello, Bo Cranford"
 
   style :try, extends: :custom_label,
     constraints: [
@@ -31,4 +31,12 @@ Teacup::Stylesheet.new :settings do
     ],
     font: :bold.uifont(12),
     text: @credits.join("\n")
+
+  style :twitter_label,
+    constraints: [
+      constrain(:center_x).equals(:superview, :center_x),
+      constrain_below(:about)
+    ],
+    backgroundColor: :clear,
+    textColor: :black
 end

@@ -1,5 +1,6 @@
 class Stoppers
 	attr_accessor :lines
+	DOMAIN = "www.convostoppers.com" #"frattmans.com:4000"
 
 	def initialize
 		# get local quips, if no quips then seed data
@@ -22,7 +23,7 @@ class Stoppers
 
 	def remote_update
 		ap "checking if update is needed"
-		BW::HTTP.get("http://frattmans.com:4000/api.json") do |response|
+		BW::HTTP.get("http://#{DOMAIN}/api.json") do |response|
 		  if response.ok?
 		    json = BW::JSON.parse(response.body.to_str)
 		    #Check if counts differ to 
@@ -38,7 +39,7 @@ class Stoppers
 
 	def perform_update
 		ap "downloading update"
-		BW::HTTP.get("http://frattmans.com:4000/api/v1/quips/index.json") do |response|
+		BW::HTTP.get("http://#{DOMAIN}/api/v1/quips/index.json") do |response|
 		  if response.ok?
 		    @json = BW::JSON.parse(response.body.to_str)
 		    # now that we've got it all let's use em!

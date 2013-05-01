@@ -1,5 +1,5 @@
 class AppProperties
-  VERSION = '1.0'
+  VERSION = '1.1'
   SKU_NAME = 'convostoppersfree' #default
   COMPANY_NAME = 'com.iconoclastlabs.'
 
@@ -20,7 +20,7 @@ class AppProperties
   end
 
   def developer_certificate
-    "iPhone Developer: Matt Garrison (EUS6PB7N8V)"
+    "iPhone Developer: Gant Laborde (56HAJP2GEQ)"
   end
 
   def distribution_certificate

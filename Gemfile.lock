@@ -14,6 +14,8 @@ GEM
       teacup
     teacup (1.2.8)
       rake
+    twittermotion (0.0.1)
+      bubble-wrap (>= 1.1.2)
 
 PLATFORMS
   ruby
@@ -26,3 +28,4 @@ DEPENDENCIES
   sugarcube
   sweettea
   teacup
+  twittermotion

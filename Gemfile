@@ -8,4 +8,4 @@ gem "sweettea"
 gem 'bubble-wrap', '1.3.0.osx'
 gem "motion-awesome"
 gem "motion-map"
-gem "twittermotion"
+#gem "twittermotion"

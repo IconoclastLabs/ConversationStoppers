@@ -1,5 +1,5 @@
 describe "The root view" do
-  tests RootViewController
+  tests RootController
 
   it "displays a new stopper when the Next button is tapped" do
     

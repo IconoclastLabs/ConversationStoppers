@@ -4,6 +4,7 @@ class RootController < UIViewController
   layout :root do
     @label = subview(UILabel, :label)
     @long_button = subview(UIButton.rounded_rect, :long_button)
+    @twitter_button = subview(UIButton.rounded_rect, :twitter_button)
     @gear = subview(UIButton.rounded_rect, :settings_button)
     @ad = subview(ADBannerView, :ads)
   end  
@@ -39,6 +40,28 @@ class RootController < UIViewController
     @long_button.on(:touch) do 
       @label.text = @stoppers.next_line
       @label.fit_to_size(40)
+    end
+
+    @twitter_button.on(:touch) do
+      #if Twitter::Composer.available?
+      #  tweet_suggestion
+      #else
+        UIAlertView.alert "You must be logged in to Twitter in order to send us suggestions!"
+      #end
+    end
+
+  end
+
+  def tweet_suggestion
+    composer = Twitter::Composer.new
+    composer.compose(tweet: '@ConvoStoppers : ') do |composer|
+      if composer.error
+        p "Error"
+      elsif composer.cancelled?
+        p "Cancelled by user"
+      elsif composer.done?
+        p "Tweet successful"
+      end
     end
   end
 

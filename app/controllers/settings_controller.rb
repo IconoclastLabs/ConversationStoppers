@@ -17,18 +17,4 @@ class SettingsController < UIViewController
 
   end
 
-# Twittermotion is causing errors
-  #def tweet_suggestion
-  #  composer = Twitter::Composer.new
-  #  composer.compose(tweet: '@ConvoStoppers : ') do |composer|
-  #    if composer.error
-  #      p "Error"
-  #    elsif composer.cancelled?
-  #      p "Cancelled by user"
-  #    elsif composer.done?
-  #      p "Tweet successful"
-  #    end
-  #  end
-  #end
-
 end

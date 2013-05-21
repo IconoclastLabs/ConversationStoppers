@@ -23,7 +23,6 @@ Teacup::Stylesheet.new :base do
     }
 
   style :custom_long_button,
-    width: 292,
     height: 42,
     title: "Stop Conversations",
     button_background: 'large_button'

@@ -16,7 +16,7 @@ Teacup::Stylesheet.new :base do
     shadowColor: :black,
     textAlignment: UITextAlignmentCenter,
     layer: {
-      transform: identity,
+      transform: transform_layer.identity,
       shadowRadius: 20,
       shadowOpacity: 0.5,
       masksToBounds: false

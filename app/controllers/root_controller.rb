@@ -44,9 +44,9 @@ class RootController < UIViewController
 
     @twitter_button.on(:touch) do
       #if Twitter::Composer.available?
-      #  tweet_suggestion
+        tweet_suggestion
       #else
-        UIAlertView.alert "You must be logged in to Twitter in order to send us suggestions!"
+      #  UIAlertView.alert "You must be logged in to Twitter in order to send us suggestions!"
       #end
     end
 
@@ -56,11 +56,11 @@ class RootController < UIViewController
     composer = Twitter::Composer.new
     composer.compose(tweet: '@ConvoStoppers : ') do |composer|
       if composer.error
-        p "Error"
+        ap "Error"
       elsif composer.cancelled?
-        p "Cancelled by user"
+        ap "Cancelled by user"
       elsif composer.done?
-        p "Tweet successful"
+        ap "Tweet successful"
       end
     end
   end

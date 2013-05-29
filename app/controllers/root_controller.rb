@@ -49,21 +49,15 @@ class RootController < UIViewController
         UIAlertView.alert "You must be logged in to Twitter in order to send us suggestions!"
       end
     end
-
   end
 
   def tweet_suggestion
     account = Twitter.accounts[0]
     account.compose(tweet: '@ConvoStoppers : ') do |composer|
-      if composer.error
-        ap "Error"
-      elsif composer.cancelled?
-        ap "Cancelled by user"
-      elsif composer.done?
-        ap "Tweet successful"
+      if composer.done?
         UIAlertView.alert "Thanks for the suggestion!  We'll check it out."
       end
-    end
+    end #close compose
   end
 
 end
